@@ -1,0 +1,137 @@
+/*CSS referente ao container do cardapio*/
+.containerHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 10px 20px 10px;
+    gap: 20px;
+    border: 1px solid #474646;
+    border-radius: 20px;
+    padding: 20px 10px;
+}
+
+.containerHome h2{
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.containerHome h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.cardAll{
+    border: 1px solid #747474;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.cardAll li{
+    display: flex;
+    background-color: #000000;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #746f6f;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 15px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.cardAll li:hover{
+    opacity: 1;
+}
+
+.cardAll img{
+    width: 25px;
+    height: 25px;
+}
+
+/*CSS referente ao container de pedidos*/
+.pedidosNow{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #746f6f;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pedidosNow h3{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pedidosNow ul{
+    margin-bottom: 20px;
+}
+
+.pedidosNow ul li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pedidosNow h5{
+    margin-bottom: 10px;
+}
+
+.pedidosNow button{
+    background-color: transparent;
+    border: 1px solid #746f6f;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/*CSS referente ao container de conta*/
+.verConta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.verConta button{
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 1px solid #747474;
+    border-radius: 10px;
+}
+
+#show-conta{
+    padding: 20px;
+    border: 4px solid #d9dc2e;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    align-self: center;
+    width: 70%;
+}
+
+#show-conta ul{
+    margin-bottom: 30px;
+}
+
+#show-conta ul li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #747474;
+}
+
+#show-conta span{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#show-conta button{
+    background-color: transparent;
+    padding: 5px;
+    text-transform: uppercase;
+    border: 1px solid #747474;
+
+border-radius: 5px;}
+
