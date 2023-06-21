@@ -1,0 +1,20 @@
+{
+    "Opções Principais": {
+        "Bebidas":{
+            "Sub Opções":{
+                "Cervejas 600ml":{
+                    "slot1": {
+                        "id": 1,
+                        "name": "Heineken",
+                        "valor": 17.90
+                            },
+                    "slot2": {
+                        "id": 2,
+                        "name": "Brahma Duplo Malte",
+                        "valor": 11.90
+                            }
+                }
+            }
+        }
+    }
+}

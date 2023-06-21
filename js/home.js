@@ -1,3 +1,4 @@
+const urlApi = '../thebar.json'
 const containerConta = document.querySelector('#show-conta');
 const btnConta = document.querySelector('#btn-conta');
 const btnFinalizar = document.querySelector('#pedir-conta');
