@@ -16,23 +16,32 @@
     <main>
         <header>
             <span><h1>THE</h1><h1>BAR</h1></span>
-            <p>Dos bares o bar, sla</p>
+            <p>Dos bares o bar</p>
         </header>
             <div class="containerHome">
                     <h1>Cardapio</h1>
                     <div class="cardAll">
-                        <ul>
-                            <li>BEBIDAS<img src="./img/icons/beear.png"></li>
-                            <li>PETISCOS<img src="./img/icons/potato.png"></li>
-                            <li>HAMBURGUERS<img src="./img/icons/hamburg.png"></li>
-                            <li>REFRESCANTES<img src="./img/icons/refresh.png"></li>
-                            <li>ESPECIAIS<img src="./img/icons/special.png"></li>
-                            <li>GIN<img src="./img/icons/gin.png"></li>
-                            <li>SHOTS<img src="./img/icons/refresh.png"></li>
-                            <li>CLASSICOS<img src="./img/icons/special.png"></li>
-                            <li>SEM ALCOOL<img src="./img/icons/noalcool.png"></li>
-                        </ul>
-                    </div>
+                        <div class="Card">
+                        <span id="btn-choise"><p>BEBIDAS</p><img src="./img/icons/beear.png"></span>
+                        <div id="itemsCard">
+                            <ul>
+                                <p>Cervejas 600ML</p>
+                                <li><p>Heineken</p><p>17,90</p></li>
+                                <li><p>Brahma Duplo Malte</p><p>11,90</p></li>
+                                <li><p>Devassa</p><p>10,90</p></li>
+                                <li><p>Eisenbahn</p><p>13,90</p></li>
+                            </ul>
+                            <ul>
+                                <p>Long Necks</p>
+                                <li><p>Heineken 330ml</p><p>13,00</p></li>
+                                <li><p>Budweiser 330ml</p><p>12,00</p></li>
+                                <li><p>Smirnoff Ice 275ml</p><p>15,90</p></li>
+                                <li><p>Skol Beats Senses 313ml</p><p>12,90</p></li>
+                                <li><p>Império 330ml</p><p>9,90</p></li>
+                                <li><p>Heineken Zero 330ml</p><p>11,00</p></li>
+                            </ul>
+                        </div>
+                        </div>
 
                     <div class="pedidosNow">
                         <h3>Revise seu pedido</h3>
@@ -48,18 +57,23 @@
                     <div class="verConta">
                         <button id="btn-conta">Ver Conta</button>
                     </div>
+                </div>
 
-                    <div id="show-conta" class="hide">
-                        <ul>
-                            <li><p>Cerveja</p><p>10,00R$</p></li>
-                            <li><p>Cachaça</p><p>5,00R$</p></li>
-                        </ul>
-                        <span>
-                            <button id="pedir-conta">Pedir a Conta</button>
-                            <button id="Npedir-conta">Voltar</button>
-                        </span>
-                    </div>
+                <div id="show-conta" class="hide">
+                    <ul>
+                        <li><p>Cerveja</p><p>10,00R$</p></li>
+                        <li><p>Cachaça</p><p>5,00R$</p></li>
+                    </ul>
+                    <span>
+                        <button id="pedir-conta">Pedir a Conta</button>
+                        <button id="Npedir-conta">Voltar</button>
+                    </span>
+                </div>
+
             </div>
+
+
+            </div>    
         <footer>
             <p>Matheus Fontenele 2023</p>
             <ul>

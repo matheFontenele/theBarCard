@@ -17,7 +17,6 @@ function validaInput(mesaId, mesaIdLength) {
         inputMesa.classList.remove('error');
         btnCad.removeAttribute('disabled', 'disabled');
     }
-    console.log(mesaIdLength)
 }
 
 inputMesa.addEventListener('focusout', () => {

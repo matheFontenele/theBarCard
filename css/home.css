@@ -27,7 +27,7 @@
     border-radius: 10px;
 }
 
-.cardAll li{
+.cardAll span{
     display: flex;
     background-color: #000000;
     justify-content: center;
@@ -41,13 +41,39 @@
     cursor: pointer;
 }
 
-.cardAll li:hover{
-    opacity: 1;
-}
-
 .cardAll img{
     width: 25px;
     height: 25px;
+}
+
+/*CSS referente aos cards do cardapio*/
+#itemsCard{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid rgb(136, 133, 133);
+    border-radius: 0 0 10px 10px ;
+    padding: 10px;
+}
+
+#itemsCard ul p{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #d9dc2e;
+}
+
+#itemsCard ul li{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px #d9dc2e solid;
+}
+
+#itemsCard ul li p{
+    text-transform:capitalize;
+    font-size: .8rem;
+    font-weight: 350;
+    color: #000000;
+    margin-top: 5px;
 }
 
 /*CSS referente ao container de pedidos*/
@@ -57,6 +83,7 @@
     border: 1px solid #746f6f;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 10px;
 }
 
 .pedidosNow h3{
@@ -91,6 +118,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 10px 0;
 }
 
 .verConta button{
