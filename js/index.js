@@ -1,9 +1,10 @@
+const formMesa = document.querySelector('#idMesa');
 const inputMesa = document.querySelector('#number');
 const btnCad = document.querySelector('#btn-open-card');
 
-function mesaSaveId(){
-    let mesaNumber = inputMesa.value
-}
+
+ 
+
 
 //Validação do input
 function validaInput(mesaId, mesaIdLength) {
@@ -20,7 +21,13 @@ function validaInput(mesaId, mesaIdLength) {
 }
 
 inputMesa.addEventListener('focusout', () => {
-    validaInput();
+  validaInput();
 })
+
+formMesa.addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.location.href = '../home.html'
+})
+
 
 

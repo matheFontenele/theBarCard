@@ -1,20 +1,23 @@
 {
-    "Opções Principais": {
-        "Bebidas":{
-            "Sub Opções":{
-                "Cervejas 600ml":{
-                    "slot1": {
-                        "id": 1,
-                        "name": "Heineken",
-                        "valor": 17.90
-                            },
-                    "slot2": {
-                        "id": 2,
-                        "name": "Brahma Duplo Malte",
-                        "valor": 11.90
-                            }
-                }
+    "Menu":{
+        "name": "Cervejas",
+        "Cervejas":{
+            "01":{
+                "name": "Heineken",
+                "tipo": "600ml",
+                "preco": 17.90
+            },
+            "02":{
+                "name": "Brahma Duplo Malte",
+                "tipo": "600ml",
+                "preco": 11.90
+            },
+            "03":{
+                "name": "Devassa",
+                "tipo": "600ml",
+                "preco": 10.90
             }
         }
+        }
     }
-}
+    

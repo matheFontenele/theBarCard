@@ -1,28 +1,10 @@
-/*CSS referente ao container do cardapio*/
-.containerHome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 40px 10px 20px 10px;
-    gap: 20px;
-    border: 1px solid #474646;
-    border-radius: 20px;
-    padding: 20px 10px;
-}
-
-.containerHome h2{
-    font-size: 1rem;
-    margin-bottom: 30px;
-}
-
-.containerHome h1{
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+:root{
+    --border-color: #747474;
+    --text-color: #d9dc2e;
 }
 
 .cardAll{
-    border: 1px solid #747474;
+    border: 1px solid var(--border-color);
     padding: 5px;
     border-radius: 10px;
 }
@@ -32,7 +14,7 @@
     background-color: #000000;
     justify-content: center;
     align-items: center;
-    border: 1px solid #746f6f;
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 5px;
     margin-top: 15px;
@@ -47,28 +29,28 @@
 }
 
 /*CSS referente aos cards do cardapio*/
-#itemsCard{
+.itemsCard{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    border: 1px solid rgb(136, 133, 133);
+    border: 1px solid var(--border-color);
     border-radius: 0 0 10px 10px ;
     padding: 10px;
 }
 
-#itemsCard ul p{
+.itemsCard ul p{
     text-transform: uppercase;
     font-weight: 500;
-    color: #d9dc2e;
+    color: var(--text-color);
 }
 
-#itemsCard ul li{
+.itemsCard ul li{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px #d9dc2e solid;
+    border-bottom: 1px var(--text-color) solid;
 }
 
-#itemsCard ul li p{
+.itemsCard ul li p{
     text-transform:capitalize;
     font-size: .8rem;
     font-weight: 350;
@@ -80,7 +62,7 @@
 .pedidosNow{
     display: flex;
     flex-direction: column;
-    border: 1px solid #746f6f;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
@@ -108,7 +90,7 @@
 
 .pedidosNow button{
     background-color: transparent;
-    border: 1px solid #746f6f;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 5px;
 }
@@ -124,13 +106,13 @@
 .verConta button{
     background-color: transparent;
     text-transform: uppercase;
-    border: 1px solid #747474;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
 }
 
 #show-conta{
     padding: 20px;
-    border: 4px solid #d9dc2e;
+    border: 4px solid var(--text-color);
     border-radius: 10px;
     background-color: #fff;
     position: absolute;
@@ -146,7 +128,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    border-bottom: 1px solid #747474;
+    border-bottom: 1px solid var(--border-color);
 }
 
 #show-conta span{
@@ -159,7 +141,9 @@
     background-color: transparent;
     padding: 5px;
     text-transform: uppercase;
-    border: 1px solid #747474;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
 
-border-radius: 5px;}
+
 
