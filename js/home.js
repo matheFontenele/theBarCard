@@ -1,61 +1,97 @@
-//import mesaSaveId from './index.js';
-
-const mainContainer = document.querySelector('#container');
 const containerConta = document.querySelector('#show-conta');
 const btnConta = document.querySelector('#btn-conta');
-const btnFinalizar = document.querySelector('#pedir-conta');
 const btnReturn = document.querySelector('#Npedir-conta');
-const itensChoice = document.querySelector('#itemsCard');
+const drinksList = document.querySelector('#list-drinks');
+const petisList = document.querySelector('#list-petis');
 
 //Função para abrir e fechar conta do cliente
 function showConta() {
     containerConta.classList.toggle('hide');
 }
 
-//Função para buscar itens da API
-const getItensCard = async (item) => {
-    const url = '../thebar.json'
+//Função para buscar bebidas da API
+const getDrinksCard = async () => {
+    const url = '../json/bebidas.json'
     const resp = await fetch(url);
     const data = await resp.json();
+    newDrinkCard(data)
+}
+
+//Função para buscar petiscos da API
+const getPetiscCard = async () => {
+    const url = '../json/petiscos.json'
+    const resp = await fetch(url);
+    const data = await resp.json();
+    newPetisCard(data)
+}
+
+
+//Função para adicionar drinks no cardapio
+const newDrinkCard = (item) => {
+
+    for (let i = 0; i < 2 ; i++) {
     
-    Object.keys(data).map(key => {
-         item = data[key]
-    })
+    const itensList = document.createElement('li');
+    drinksList.appendChild(itensList);
+    const spanList = document.createElement('span');
+    spanList.classList.add('itensStyle');
+    itensList.appendChild(spanList);
 
-    const cardapio = document.createElement('div');
-    cardapio.classList.add('containerHome');
-    mainContainer.appendChild(cardapio);
+    const name = document.createElement('p');
+    name.innerHTML = item['Bebidas'][i].name;
+    spanList.appendChild(name);
 
-    const cardTitle = document.createElement('h1');
-    cardTitle.innerText = 'Cardapio';
-    cardapio.appendChild(cardTitle);
+    const desc = document.createElement('p');
+    desc.innerHTML = item['Bebidas'][i].descri;
+    spanList.appendChild(desc);
 
-    const boxCardItens = document.createElement('div');
-    boxCardItens.classList.add('cardAll');
-    cardapio.appendChild(boxCardItens);
+    const valor = document.createElement('p');
+    valor.innerHTML = `${item['Bebidas'][i].valor}$R$`;
+    valor.classList.add('valorText');
+    itensList.appendChild(valor);
 
-    const itemPrimary = document.createElement('span');
-    itemPrimary.innerText = item.name
-    boxCardItens.appendChild(itemPrimary);
+    }
+}
 
-    const divItensCard = document.createElement('div');
-    divItensCard.classList.add('itemsCard');
-    boxCardItens.appendChild(divItensCard);
+//Função para adicionar petiscos no cardapio
+const newPetisCard = (item) => {
 
-    const listBox = document.createElement('ul');
-    divItensCard.appendChild(listBox);
+    for (let i = 0; i < 2 ; i++) {
+    
+    const itensList = document.createElement('li');
+    petisList.appendChild(itensList);
+    const spanList = document.createElement('span');
+    spanList.classList.add('itensStyle');
+    itensList.appendChild(spanList);
 
-    const itensListBox = `<li><p>${item['Cervejas']['01']['name']}</p><p>${item['Cervejas']['01']['valor']}</p><p>${item['Cervejas']['01']['tipo']}</p></li>`;
-    divItensCard.innerHTML = itensListBox;
+    const name = document.createElement('p');
+    name.innerHTML = item['Petiscos'][i].name;
+    spanList.appendChild(name);
 
+    const desc = document.createElement('p');
+    desc.innerHTML = item['Petiscos'][i].descri;
+    spanList.appendChild(desc);
 
-    console.log(item)
-
+    const valor = document.createElement('p');
+    valor.innerHTML = `${item['Petiscos'][i].valor}$R$`;
+    valor.classList.add('valorText');
+    itensList.appendChild(valor);
+    }
 }
 
 
 
+//Função para abrir e fechar container de itens do cardapio
+document.addEventListener('click', (e) => {
+    const targetBtn = e.target
+    const papaiTarget = targetBtn.closest('div')
+    const childresnDiv = papaiTarget.querySelector('ul')
 
+    if(papaiTarget.classList.contains('itemsCard')){
+        childresnDiv.classList.toggle('hide')
+    }
+    
+});
 
 btnConta.addEventListener('click', () => {
     showConta();
@@ -65,4 +101,5 @@ btnReturn.addEventListener('click', () =>{
     showConta();
 })
 
-getItensCard();
+getDrinksCard()
+getPetiscCard()

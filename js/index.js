@@ -27,6 +27,7 @@ inputMesa.addEventListener('focusout', () => {
 formMesa.addEventListener('submit', (e) => {
     e.preventDefault();
     window.location.href = '../home.html'
+    inputMesa.value = ''
 })
 
 

@@ -1,0 +1,14 @@
+{
+    "Bebidas": [
+        {
+            "name": "Heineken",
+            "valor": "18,20",
+            "descri": "600 ml"
+        },
+        {
+            "name": "Brahma Duplo Malte",
+            "valor": "15,90",
+            "descri": "600 ml"
+        }
+    ]
+}

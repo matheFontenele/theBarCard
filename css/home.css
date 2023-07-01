@@ -1,15 +1,12 @@
 :root{
     --border-color: #747474;
-    --text-color: #d9dc2e;
+    --text-color: #797a0a;
+    --text-color-destaque: #d6da12;
 }
 
-.cardAll{
-    border: 1px solid var(--border-color);
-    padding: 5px;
-    border-radius: 10px;
-}
 
-.cardAll span{
+
+.itemsCard button{
     display: flex;
     background-color: #000000;
     justify-content: center;
@@ -17,10 +14,12 @@
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 5px;
+    font-size: 1.3rem;
     margin-top: 15px;
-    color: #fff;
+    color: var(--text-color-destaque);
     opacity: 0.8;
     cursor: pointer;
+    min-width: 239px;
 }
 
 .cardAll img{
@@ -35,27 +34,37 @@
     gap: 30px;
     border: 1px solid var(--border-color);
     border-radius: 0 0 10px 10px ;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 }
 
-.itemsCard ul p{
-    text-transform: uppercase;
-    font-weight: 500;
+.itensStyle{
+    display: flex;
+    flex-direction: column;
+}
+
+.itensStyle p:first-child{
     color: var(--text-color);
+    font-size: 1.1rem;
+    border-bottom: 1px solid #747474;
 }
 
-.itemsCard ul li{
+.itensStyle p:last-child{
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.itemsCard ul li {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px var(--text-color) solid;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    padding: 5px;
 }
 
-.itemsCard ul li p{
-    text-transform:capitalize;
+.valorText{
+    font-weight: 700;
     font-size: .8rem;
-    font-weight: 350;
-    color: #000000;
-    margin-top: 5px;
+    border-bottom: 1px solid var(--text-color-destaque);
 }
 
 /*CSS referente ao container de pedidos*/
