@@ -1,0 +1,124 @@
+{
+    "menu":[
+        {
+            "name": "Bebidas",
+            "itens": [
+                {
+                    "name": "Heineken",
+                    "valor": "17,90",
+                    "descri": "600 ml"
+                },
+                {
+                    "name": "Brahma Duplo Malte",
+                    "valor": "11,90",
+                    "descri": "600 ml"
+                },
+                {
+                    "name": "Devassa",
+                    "valor": "10,90",
+                    "descri": "600 ml"
+                },
+                {
+                    "name": "Eisenbahn",
+                    "valor": "13,90",
+                    "descri": "600 ml"
+                },
+                {
+                    "name": "Heineken",
+                    "valor": "13,00",
+                    "descri": "300 ml"
+                },
+                {
+                    "name": "Budweiser",
+                    "valor": "12,00",
+                    "descri": "300 ml"
+                },
+                {
+                    "name": "Smirnoff Ice",
+                    "valor": "15,90",
+                    "descri": "275 ml"
+                },
+                {
+                    "name": "Skol Beats Senses",
+                    "valor": "12,90",
+                    "descri": "313 ml"
+                }
+            ] 
+        },
+        {
+            "name": "Petiscos",
+            "itens": [
+                {
+                    "name": "Feijão Verde",
+                    "valor": "24,90",
+                    "descri": "Feijão verde cremoso com cubinhos de queijo coalho, calabresa picada e cheiro verde"
+                },
+                {
+                    "name": "Hot Wings",
+                    "valor": "36,90",
+                    "descri": "Oito deliciosas coxinhas da asa empanadas com farinha panko e banhadas no nosso delicioso molho picante"
+                },
+                {
+                    "name": "Palitos de Queijo",
+                    "valor": "24,90",
+                    "descri": "6 unidades acompanhadas de molho de mostarda e mel"
+                },
+                {
+                    "name": "Filé com Fritas",
+                    "valor": "44,90",
+                    "descri": "200g de filé mignon em tiras ao molho madeira acompanhado de batatas fritas"
+                },
+                {
+                    "name": "Batata Frita Tradicional",
+                    "valor": "16,90",
+                    "descri": "300g de batata frita servida com molho rosé"
+                },
+                {
+                    "name": "Batata Especial",
+                    "valor": "22,90",
+                    "descri": "300g de batata frita regada com molho cheddar e farofa de bacon"
+                }
+            ]
+        },
+        {
+            "name": "Hamburguers",
+            "itens": [
+                {
+                    "name": "Classic Burguer",
+                    "valor": "29,90",
+                    "descri": "Hamburguer artesanal de 150g, cheddar, baconn e molho da casa. Acompanha batata frita"
+                },
+                {
+                    "name": "Bluecheese Burguer",
+                    "valor": "31,90",
+                    "descri": "Hamburguer artesanal de 150g, creme de queijo gorgonzola e cebola caramelizada. Acompanha batata frita"
+                },
+                {
+                    "name": "Barbe Burguer",
+                    "valor": "29,90",
+                    "descri": "hamburguer artesanal de 150g, queijo mussarela, tomate, alface e molho barbecue. Acompoma batata frita"
+                }
+            ]
+        },
+        {
+            "name": "Sem Alcool",
+            "itens": [
+                {
+                    "name": "Chá matte gelado",
+                    "valor": "8,50",
+                    "descri": "Chá matte, sour mix, xarope simples"
+                },
+                {
+                    "name": "Pink Iced Summer",
+                    "valor": "14,90",
+                    "descri": "Suco de laranja, grenadine, pure de morango"
+                },
+                {
+                    "name": "Soda italiana",
+                    "valor": "9,90",
+                    "descri": "Água com gás, xarope"
+                }
+            ]
+        }
+    ]
+}
