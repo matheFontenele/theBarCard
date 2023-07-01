@@ -33,6 +33,7 @@ const creatCard = (item) => {
 
         const btnItens = document.createElement('button');
         btnItens.innerText = item['menu'][i].name
+        btnItens.classList.add('btnItens')
         card.appendChild(btnItens);
 
         const ulList = document.createElement('ul');
@@ -44,6 +45,7 @@ const creatCard = (item) => {
             
 
             const itensList = document.createElement('li');
+            itensList.classList.add('itensOptions')
             ulList.appendChild(itensList);
 
             const spanList = document.createElement('span');
@@ -51,10 +53,12 @@ const creatCard = (item) => {
             itensList.appendChild(spanList);
 
             const name = document.createElement('p');
+            name.classList.add('itensOptions')
             name.innerHTML = item['menu'][i].itens[j].name;
             spanList.appendChild(name);
 
             const desc = document.createElement('p');
+            desc.classList.add('itensOptions')
             desc.innerHTML = item['menu'][i].itens[j].descri;
             spanList.appendChild(desc);
 
@@ -66,26 +70,32 @@ const creatCard = (item) => {
             const valorItem = item['menu'][i].itens[j].valor.replace(',', '.')
         const newValorItem = Number(valorItem);
 
-        console.log(newValorItem)
-
         }
     }
 }
 
 
-
-
 //Função para abrir e fechar container de itens do cardapio
 document.addEventListener('click', (e) => {
     const targetBtn = e.target
+    let itenPrice;
     const papaiTarget = targetBtn.closest('div')
     const childresnDiv = papaiTarget.querySelector('ul')
+    let itemValor;
 
-    if(papaiTarget.classList.contains('itemsCard')){
+
+    if(targetBtn.classList.contains('btnItens')){
         childresnDiv.classList.toggle('hide')
     }
     
-});
+    if(targetBtn.classList.contains('itensOptions', 'valorText')){
+       itemValor = targetBtn.querySelector('.valorText').innerText
+       console.log(itemValor)
+    }
+})
+    
+
+
 
 btnConta.addEventListener('click', () => {
     showConta();
