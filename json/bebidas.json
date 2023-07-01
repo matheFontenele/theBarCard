@@ -2,12 +2,22 @@
     "Bebidas": [
         {
             "name": "Heineken",
-            "valor": "18,20",
+            "valor": "17,90",
             "descri": "600 ml"
         },
         {
             "name": "Brahma Duplo Malte",
-            "valor": "15,90",
+            "valor": "11,90",
+            "descri": "600 ml"
+        },
+        {
+            "name": "Devassa",
+            "valor": "10,90",
+            "descri": "600 ml"
+        },
+        {
+            "name": "Eisenbahn",
+            "valor": "13,90",
             "descri": "600 ml"
         }
     ]

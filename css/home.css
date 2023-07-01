@@ -37,9 +37,16 @@
     padding: 0 10px 10px 10px;
 }
 
+.itemsCard ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .itensStyle{
     display: flex;
     flex-direction: column;
+    gap: 7px;
 }
 
 .itensStyle p:first-child{
@@ -49,8 +56,10 @@
 }
 
 .itensStyle p:last-child{
-    font-size: .8rem;
+    font-size: .7rem;
     font-weight: 700;
+    max-width: 10rem;
+    word-break: break-word;
 }
 
 .itemsCard ul li {
@@ -90,11 +99,36 @@
 .pedidosNow ul li{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pedidosNow ul li span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pedidosNow ul li span p:first-child{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.pedidosNow ul li span p:last-child{
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .pedidosNow h5{
     margin-bottom: 10px;
+}
+
+.pedidosNow h5 p{
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .pedidosNow button{
