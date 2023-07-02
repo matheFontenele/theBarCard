@@ -23,20 +23,35 @@
             <p>Dos bares o bar</p>
         </header>
             <div class="container" id="container">
-                  <h1>Cardapio</h1>
+                <!--HTML Box de Cardapio-->
+                  <h1 class="cardapioTitle">Cardapio</h1>
+                  <p class="cardapioBoasVindas">Faça seu pedido e agurde um garçon vira deixar em poucos minutos (;</p>
                     <div id="divAll">
                    
                     </div>
                           
+                <!--HTMl Box de Conta Final-->
+                    <div id="show-conta" class="hide">
+                        <ul>
+                            <li><p>Cerveja</p><p>10,00R$</p></li>
+                            <li><p>Cachaça</p><p>5,00R$</p></li>
+                        </ul>
+                        <h5>Total<p>50,00</p></h5>
+                        <span>
+                            <button id="pedir-conta">Pedir a Conta</button>
+                            <button id="Npedir-conta">Voltar</button>
+                        </span>
+                    </div>
 
-                    <div class="pedidosNow">
+                <!--HTML Box de Pedidos de momento-->
+                    <div class="pedidosNow" id="pedidos-now">
                         <h3>Revise seu pedido</h3>
-                        <div>
-                            <ul>
-                                <li><span><p>item</p><p>22,90</p></span><i class="fa-solid fa-trash" style="color: #d9dc2e;"></i></li>
-                                <li><span><p>item</p><p>22,90</p></span><i class="fa-solid fa-trash" style="color: #d9dc2e;"></i></li>
+                        <div id="div-pedidosNow">
+                            <ul id="ul-pedidos">
+                                
+                                
                             </ul>
-                            <h5>Total <p>50,00R$</p></h5>
+                            <h5>TOTAL<p id="total-itens"></p></h5>
                         </div>
                         <button>Fazer Pedido</button>
                     </div>
@@ -44,22 +59,7 @@
                         <button id="btn-conta">Ver Conta</button>
                     </div>
                 </div>
-
-                <div id="show-conta" class="hide">
-                    <ul>
-                        <li><p>Cerveja</p><p>10,00R$</p></li>
-                        <li><p>Cachaça</p><p>5,00R$</p></li>
-                    </ul>
-                    <span>
-                        <button id="pedir-conta">Pedir a Conta</button>
-                        <button id="Npedir-conta">Voltar</button>
-                    </span>
-                </div>
-
-            </div>
-
-
-            </div>    
+ 
         <footer>
             <p>Matheus Fontenele 2023</p>
             <ul>

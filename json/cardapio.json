@@ -42,6 +42,16 @@
                     "name": "Skol Beats Senses",
                     "valor": "12,90",
                     "descri": "313 ml"
+                },
+                {
+                    "name": "Imperio",
+                    "valor": "9,90",
+                    "descri": "330 ml"
+                },
+                {
+                    "name": "Heineken Zero",
+                    "valor": "11,00",
+                    "descri": "330 ml"
                 }
             ] 
         },
@@ -77,6 +87,11 @@
                     "name": "Batata Especial",
                     "valor": "22,90",
                     "descri": "300g de batata frita regada com molho cheddar e farofa de bacon"
+                },
+                {
+                    "name": "Kit Petisco",
+                    "valor": "38,90",
+                    "descri": "Um mix perfeito de coxinha da asa, calabresa, batata frita e onion rings( Aprox 450g)"
                 }
             ]
         },
@@ -117,6 +132,86 @@
                     "name": "Soda italiana",
                     "valor": "9,90",
                     "descri": "Água com gás, xarope"
+                },
+                {
+                    "name": "Agua sem gás",
+                    "valor": "5,00",
+                    "descri": "500 ml"
+                },
+                {
+                    "name": "Agua com gás",
+                    "valor": "6,00",
+                    "descri": "500 ml"
+                }
+            ]
+        },
+        {
+            "name": "Refrescantes",
+            "itens": [
+                {
+                    "name": "Blue Lagoon",
+                    "valor": "16,90",
+                    "descri": "vodka, curação blue, sour mix, soda limonada"
+                },
+                {
+                    "name": "Caipirinha de Frutas",
+                    "valor": "15,90",
+                    "descri": "Cachaça prata, açúcar, fruta (verificar frutas disponiveis)"
+                },
+                {
+                    "name": "Caipirinha de Limão",
+                    "valor": "12,00",
+                    "descri": "Cachaça prata, limão taití, açúcar"
+                },
+                {
+                    "name": "Cuba Libre",
+                    "valor": "15,90",
+                    "descri": "Rum Carla Blanca, coca-cola, limão taití"
+                }
+            ]
+        },
+        {
+            "name": "Clássicos",
+            "itens": [
+                {
+                    "name": "Margarita (blue)",
+                    "valor": "26,90",
+                    "descri": "Tequila, limão taití, curaçao blue" 
+                },
+                {
+                    "name": "Negroni",
+                    "valor": "16,90",
+                    "descri": "Gin, campari, vermule tinto"
+                },
+                {
+                    "name": "Expresso Martini",
+                    "valor": "15,90",
+                    "descri": "Vodka, licor de café, creme de café"
+                },
+                {
+                    "name": "Whisky Sour",
+                    "valor": "16,90",
+                    "descri": "Whisky, limão taití, xarope de açúcar"
+                }
+            ]
+        },
+        {
+            "name": "Shots",
+            "itens": [
+                {
+                    "name": "B-52",
+                    "valor": "14,90",
+                    "descri": "Licor de café, baileys, triple sec"
+                },
+                {
+                    "name": "Moranguito",
+                    "valor": "15,90",
+                    "descri": "Tequíla, absinto, grenadine"
+                },
+                {
+                    "name": "Sangue de Cobra",
+                    "valor": "9,90",
+                    "descri": "Cachaça prata, grenadine, pimenta tabasco, limão taití"
                 }
             ]
         }

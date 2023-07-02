@@ -59,6 +59,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /*CSS container de mesa*/
 .container{
     display: flex;

@@ -4,6 +4,17 @@
     --text-color-destaque: #d6da12;
 }
 
+.cardapioTitle{
+    text-transform: uppercase;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cardapioBoasVindas{
+    max-width: 60%;
+    font-size: .8rem;
+    text-align: center;
+}
 
 
 .itemsCard button{
@@ -19,7 +30,7 @@
     color: var(--text-color-destaque);
     opacity: 0.8;
     cursor: pointer;
-    min-width: 239px;
+    min-width: 250px;
 }
 
 .cardAll img{
@@ -43,19 +54,19 @@
     gap: 20px;
 }
 
-.itensStyle{
+#itensStyle{
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
 
-.itensStyle p:first-child{
+#itensStyle p:first-child{
     color: var(--text-color);
     font-size: 1.1rem;
     border-bottom: 1px solid #747474;
 }
 
-.itensStyle p:last-child{
+#itensStyle p:last-child{
     font-size: .7rem;
     font-weight: 700;
     max-width: 10rem;
@@ -70,7 +81,7 @@
     padding: 5px;
 }
 
-.valorText{
+#valorText{
     font-weight: 700;
     font-size: .8rem;
     border-bottom: 1px solid var(--text-color-destaque);
@@ -82,6 +93,7 @@
     flex-direction: column;
     border: 1px solid var(--border-color);
     border-radius: 10px;
+    min-width: 250px;
     padding: 10px;
     margin-top: 10px;
 }
@@ -90,6 +102,9 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--text-color-destaque);
+    color: var(--text-color);
 }
 
 .pedidosNow ul{
@@ -98,16 +113,17 @@
 
 .pedidosNow ul li{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 10px;
+    font-size: 1rem;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--border-color);
 }
 
 .pedidosNow ul li span{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px;
     justify-content: space-between;
     width: 100%;
 }
@@ -118,8 +134,11 @@
 }
 
 .pedidosNow ul li span p:last-child{
+    font-size: .7rem;
+}
+
+.pedidosNow #valorText{
     font-size: 1rem;
-    font-weight: 700;
 }
 
 .pedidosNow h5{
@@ -149,6 +168,7 @@
 .verConta button{
     background-color: transparent;
     text-transform: uppercase;
+    padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
 }

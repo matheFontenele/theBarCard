@@ -10,12 +10,11 @@
 <h2 align="center">Pendencias</h2>
 
 <p align="center">
-- Interação e lista de produtos
-- Mudança interativa dos pedidos
 - Armazenamento da ID da mesa
 - Interação dos botões de cancelar pedido, realizar pedido, pedir conta
-- JSON dos produtos
-- Variavel para armazenar o valor dos pedidos em andamento e ja feitos
+- Desabilitar evento de criação de itens em itens ja na lista de pedidos
+- Fazer Div de Fechar conta com os valores totais
+- Tela de Loanding enquanto o JSON carrega
 </p> 
 
 
