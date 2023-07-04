@@ -1,15 +1,7 @@
 const container = document.querySelector('#divAll')
 const ulPedidosNow = document.querySelector('#ul-pedidos');
-const divPedidosNow = document.querySelector('#div-pedidosNow')
 const priceTotalItens = document.querySelector('#total-itens');
 const containerConta = document.querySelector('#show-conta');
-const btnConta = document.querySelector('#btn-conta');
-const btnReturn = document.querySelector('#Npedir-conta');
-
-//DOM da lista de itens dos cardapioss
-const drinksList = document.querySelector('#list-drinks');
-const petisList = document.querySelector('#list-petis');
-const burguerList = document.querySelector('#list-burguers');
 
 
 //Variaveis Primarias
@@ -17,10 +9,21 @@ let valorItem;
 let valorItemNumber;
 let valorTotal = 0;
 
-//Função para abrir e fechar conta do cliente
-function showConta() {
-    containerConta.classList.toggle('hide');
+//Função para somar e subtrair o valor total da conta
+const contaNota = (valor) =>{
+    valor = String(valor)
+    valor = valor.replace('.', ',')
+    priceTotalItens.innerText = `R$ ${valor}`
 }
+
+//Função para formtar valores dos itens
+const formatItemValor = (valor) =>{
+    valor = valor.replace(',', '.')
+    valor = Number(valor)
+    console.log(valor)
+}
+
+//Funcção para desformatar (transformar em String) os valores
 
 
 //Função para pegar API de cardapio
@@ -54,32 +57,30 @@ const creatCard = (item) => {
             
 
             const itensList = document.createElement('li');
-            itensList.classList.add('btnChoice')
+            itensList.setAttribute('id', 'btnChoice')
             ulList.appendChild(itensList);
 
             const spanList = document.createElement('span');
-            spanList.classList.add('btnChoice')
             spanList.setAttribute('id', 'itensStyle')
             itensList.appendChild(spanList);
 
             const name = document.createElement('p');
             name.innerHTML = item['menu'][i].itens[j].name;
-            name.classList.add('btnChoice')
+            name.setAttribute('id', 'btnChoice')
             spanList.appendChild(name);
 
             const desc = document.createElement('p')
             desc.innerHTML = item['menu'][i].itens[j].descri;
-            desc.classList.add('btnChoice')
+            desc.setAttribute('id', 'btnChoice')
             spanList.appendChild(desc);
 
             const valor = document.createElement('p');
-            valor.innerHTML = item['menu'][i].itens[j].valor;
-            valor.setAttribute('id', 'valorText')
-            valor.classList.add('btnChoice')
+            valor.innerHTML = `R$ ${item['menu'][i].itens[j].valor}`;
+            valor.setAttribute('id', 'btnChoice')
+            valor.classList.add('valorText')
             itensList.appendChild(valor);
 
-            const valorItem = item['menu'][i].itens[j].valor.replace(',', '.')
-            const newValorItem = Number(valorItem);
+            formatItemValor(item['menu'][i].itens[j].valor)
 
         }
     }
@@ -90,44 +91,58 @@ const pedidosNow = (item, preco, total) => {
 
     item = valorItem.innerHTML
     preco = valorItemNumber
-    total = valorTotal.toFixed(2)
+    total = valorTotal
 
 
     const newItemPedido = document.createElement('li');
     const removeItem = document.createElement('i');
-    const totalItensTitle = document.createElement('h5');
-    const totalItens = document.createElement('p');
 
     removeItem.classList.add('fa-solid');
-    removeItem.classList.add('fa-trash')
+    removeItem.classList.add('fa-trash');
+    removeItem.setAttribute('id', 'btn-remove');
 
     newItemPedido.innerHTML = item
+    const spanItem = newItemPedido.querySelector('span')
+    spanItem.removeAttribute('id')
+    const titleItem = newItemPedido.querySelector('p')
+    titleItem.removeAttribute('id')
+    const descrItem = newItemPedido.querySelector('#btnChoice')
+    descrItem.removeAttribute('id')
+    const valorItemRevise = newItemPedido.querySelector('.valorText')
+    valorItemRevise.removeAttribute('id')
+
     newItemPedido.removeAttribute('id')
 
-    const spanItem = newItemPedido.querySelector('.btnChoice');
-    spanItem.classList.remove('btnChoice')
     newItemPedido.appendChild(removeItem)
 
     ulPedidosNow.appendChild(newItemPedido)
 
-    priceTotalItens.innerText = `R$ ${String(total)}`.replace('.', ',')
+    contaNota(total)
     
 }
 
 
-//Função para abrir e fechar container de itens do cardapio
+//Lista de eventos com click
 document.addEventListener('click', (e) => {
     const targetBtn = e.target
     const papaiTarget = targetBtn.closest('div')
     const liFather = targetBtn.closest('li');
     const childresnDiv = papaiTarget.querySelector('ul')
+    const getIdElemtent = targetBtn.getAttribute('id');
 
+    //Evento de mostrar e ocultar div de conta
+    if (getIdElemtent  == 'btn-conta' | getIdElemtent == 'Npedir-conta'){{
+        containerConta.classList.toggle('hide')
+    }}
 
+    //Evento de ocultar e mostrar sub itens de cardapio
     if(targetBtn.classList.contains('btnItens')){
         childresnDiv.classList.toggle('hide')
     }
-    if(targetBtn.classList.contains('btnChoice')){
-        const getPriceString = liFather.querySelector('#valorText').innerText
+
+    //Evento para adicionar valor total e itens a lista de revisar pedidos
+    if(getIdElemtent == 'btnChoice' | getIdElemtent == 'valorText'){
+        const getPriceString = liFather.querySelector('.valorText').innerText
         const getPriceNumber = getPriceString.replace(',', '.')
         const newValorItem = Number(getPriceNumber);
 
@@ -135,20 +150,14 @@ document.addEventListener('click', (e) => {
         valorItemNumber = newValorItem;
         valorTotal = valorTotal + valorItemNumber
 
-        pedidosNow()
-        
+        pedidosNow()   
     }
+
+    //Evento para remover itens e alterar preço total na lista de pedidos
+    if(getIdElemtent == 'btn-remove'){
+        ulPedidosNow.removeChild(liFather);
+    }
+
 })
-
-
-
-btnConta.addEventListener('click', () => {
-    showConta();
-})
-
-btnReturn.addEventListener('click', () =>{
-    showConta();
-})
-
 
 getCard();
