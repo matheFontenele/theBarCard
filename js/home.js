@@ -148,6 +148,11 @@ document.addEventListener('click', (e) => {
         ulPedidosNow.removeChild(liFather);
     }
 
+    //Evento para adicionar itens do pedido feito na conta total
+    if(getIdElemtent == 'getItensPedido'){
+        console.log('travei aqui')
+    }
+
 })
 
 getCard();
