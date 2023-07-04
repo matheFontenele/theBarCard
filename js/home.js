@@ -2,6 +2,7 @@ const container = document.querySelector('#divAll')
 const ulPedidosNow = document.querySelector('#ul-pedidos');
 const priceTotalItens = document.querySelector('#total-itens');
 const containerConta = document.querySelector('#show-conta');
+const btnGetAllPedidos = document.querySelector('#getItensPedido')
 
 
 //Variaveis Globais
@@ -14,6 +15,23 @@ const contaNota = (valor) =>{
     valor = String(valor);
     valor = valor.replace('.', ',')
     priceTotalItens.innerText = (valor)
+}
+
+
+//Função para transformar string para number
+const toNumber = (valor) =>{
+    valor = valor.replace(',', '.')
+    valor = valor.replace('R$', '')
+    valorItem = Number(valor)
+}
+
+//Função para desabilitar botão de fazer pedidos caso esteja vazio
+const noEmpyCar = () =>{
+    if (priceTotalItens.innerText == '-0,00'){
+        priceTotalItens.innerText == '0,00'
+        btnGetAllPedidos.setAttribute('disabled', '');
+    }
+    console.log(btnGetAllPedidos)
 }
 
 
@@ -127,9 +145,7 @@ document.addEventListener('click', (e) => {
     //Evento para adicionar valor total e itens a lista de revisar pedidos
     if(targetBtn.classList.contains('btnChoice')){
         let valorNumberItem = liFather.querySelector('#valorText').innerText
-        valorNumberItem = valorNumberItem.replace(',', '.')
-        valorNumberItem = valorNumberItem.replace('R$', '')
-        valorItem = Number(valorNumberItem)
+        toNumber(valorNumberItem)
         valorTotal = valorTotal + valorItem
         const newItem = liFather.innerHTML
         contaNota(valorTotal)
@@ -140,9 +156,7 @@ document.addEventListener('click', (e) => {
     //Evento para remover itens e alterar preço total na lista de pedidos
     if(getIdElemtent == 'btn-remove'){
         let valorNumberItem = liFather.querySelector('#valorText').innerText
-        valorNumberItem = valorNumberItem.replace(',', '.')
-        valorNumberItem = valorNumberItem.replace('R$', '')
-        valorItem = Number(valorNumberItem)
+        toNumber(valorNumberItem)
         valorTotal = valorTotal - valorItem
         contaNota(valorTotal)
         ulPedidosNow.removeChild(liFather);
@@ -152,7 +166,8 @@ document.addEventListener('click', (e) => {
     if(getIdElemtent == 'getItensPedido'){
         console.log('travei aqui')
     }
-
+    console.log(priceTotalItens.innerText)
 })
 
 getCard();
+noEmpyCar();
