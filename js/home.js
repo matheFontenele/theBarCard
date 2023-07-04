@@ -164,7 +164,6 @@ document.addEventListener('click', (e) => {
     if(getIdElemtent == 'getItensPedido'){
         console.log('travei aqui')
     }
-    console.log(priceTotalItens.innerText)
 })
 
 getCard();
