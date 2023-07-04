@@ -29,9 +29,7 @@ const toNumber = (valor) =>{
 const noEmpyCar = () =>{
     if (priceTotalItens.innerText == '-0,00'){
         priceTotalItens.innerText == '0,00'
-        btnGetAllPedidos.setAttribute('disabled', '');
     }
-    console.log(btnGetAllPedidos)
 }
 
 
