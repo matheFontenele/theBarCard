@@ -11,8 +11,7 @@
 
 <p align="center">
 - Armazenamento da ID da mesa
-- Interação dos botões de cancelar pedido, realizar pedido, pedir conta
-- Desabilitar evento de criação de itens em itens ja na lista de pedidos
+- Interação dos botões realizar pedido, pedir conta
 - Fazer Div de Fechar conta com os valores totais
 - Tela de Loanding enquanto o JSON carrega
 </p> 
