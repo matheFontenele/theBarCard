@@ -4,26 +4,17 @@ const priceTotalItens = document.querySelector('#total-itens');
 const containerConta = document.querySelector('#show-conta');
 
 
-//Variaveis Primarias
+//Variaveis Globais
 let valorItem;
-let valorItemNumber;
 let valorTotal = 0;
 
 //Função para somar e subtrair o valor total da conta
 const contaNota = (valor) =>{
-    valor = String(valor)
+    valor = valor.toFixed(2)
+    valor = String(valor);
     valor = valor.replace('.', ',')
-    priceTotalItens.innerText = `R$ ${valor}`
+    priceTotalItens.innerText = (valor)
 }
-
-//Função para formtar valores dos itens
-const formatItemValor = (valor) =>{
-    valor = valor.replace(',', '.')
-    valor = Number(valor)
-    console.log(valor)
-}
-
-//Funcção para desformatar (transformar em String) os valores
 
 
 //Função para pegar API de cardapio
@@ -57,7 +48,7 @@ const creatCard = (item) => {
             
 
             const itensList = document.createElement('li');
-            itensList.setAttribute('id', 'btnChoice')
+            itensList.classList.add('btnChoice')
             ulList.appendChild(itensList);
 
             const spanList = document.createElement('span');
@@ -66,33 +57,30 @@ const creatCard = (item) => {
 
             const name = document.createElement('p');
             name.innerHTML = item['menu'][i].itens[j].name;
-            name.setAttribute('id', 'btnChoice')
+            name.classList.add('btnChoice')
+            name.setAttribute('id', 'nameItem');
             spanList.appendChild(name);
 
             const desc = document.createElement('p')
             desc.innerHTML = item['menu'][i].itens[j].descri;
-            desc.setAttribute('id', 'btnChoice')
+            desc.classList.add('btnChoice')
+            desc.setAttribute('id', 'descItem');
             spanList.appendChild(desc);
 
             const valor = document.createElement('p');
             valor.innerHTML = `R$ ${item['menu'][i].itens[j].valor}`;
-            valor.setAttribute('id', 'btnChoice')
-            valor.classList.add('valorText')
+            valor.setAttribute('id', 'valorText')
+            valor.classList.add('btnChoice')
             itensList.appendChild(valor);
 
-            formatItemValor(item['menu'][i].itens[j].valor)
+            
 
         }
     }
 }
 
-//Função para adicionar e remover itens do pedido
-const pedidosNow = (item, preco, total) => {
-
-    item = valorItem.innerHTML
-    preco = valorItemNumber
-    total = valorTotal
-
+//Função para adicionar itens do pedido
+const pedidosNow = (price) => {
 
     const newItemPedido = document.createElement('li');
     const removeItem = document.createElement('i');
@@ -101,23 +89,19 @@ const pedidosNow = (item, preco, total) => {
     removeItem.classList.add('fa-trash');
     removeItem.setAttribute('id', 'btn-remove');
 
-    newItemPedido.innerHTML = item
-    const spanItem = newItemPedido.querySelector('span')
-    spanItem.removeAttribute('id')
-    const titleItem = newItemPedido.querySelector('p')
-    titleItem.removeAttribute('id')
-    const descrItem = newItemPedido.querySelector('#btnChoice')
-    descrItem.removeAttribute('id')
-    const valorItemRevise = newItemPedido.querySelector('.valorText')
-    valorItemRevise.removeAttribute('id')
-
-    newItemPedido.removeAttribute('id')
+    newItemPedido.innerHTML = (price)
+    const descItem = newItemPedido.querySelector('#descItem')
+    descItem.classList.add('hide')
 
     newItemPedido.appendChild(removeItem)
 
     ulPedidosNow.appendChild(newItemPedido)
 
-    contaNota(total)
+    const desableName = newItemPedido.querySelector('#nameItem')
+    desableName.classList.remove('btnChoice')
+    
+    const desablePrice = newItemPedido.querySelector('#valorText')
+    desablePrice.classList.remove('btnChoice')
     
 }
 
@@ -141,20 +125,26 @@ document.addEventListener('click', (e) => {
     }
 
     //Evento para adicionar valor total e itens a lista de revisar pedidos
-    if(getIdElemtent == 'btnChoice' | getIdElemtent == 'valorText'){
-        const getPriceString = liFather.querySelector('.valorText').innerText
-        const getPriceNumber = getPriceString.replace(',', '.')
-        const newValorItem = Number(getPriceNumber);
-
-        valorItem = liFather
-        valorItemNumber = newValorItem;
-        valorTotal = valorTotal + valorItemNumber
-
-        pedidosNow()   
+    if(targetBtn.classList.contains('btnChoice')){
+        let valorNumberItem = liFather.querySelector('#valorText').innerText
+        valorNumberItem = valorNumberItem.replace(',', '.')
+        valorNumberItem = valorNumberItem.replace('R$', '')
+        valorItem = Number(valorNumberItem)
+        valorTotal = valorTotal + valorItem
+        const newItem = liFather.innerHTML
+        contaNota(valorTotal)
+        pedidosNow(newItem)
+        
     }
 
     //Evento para remover itens e alterar preço total na lista de pedidos
     if(getIdElemtent == 'btn-remove'){
+        let valorNumberItem = liFather.querySelector('#valorText').innerText
+        valorNumberItem = valorNumberItem.replace(',', '.')
+        valorNumberItem = valorNumberItem.replace('R$', '')
+        valorItem = Number(valorNumberItem)
+        valorTotal = valorTotal - valorItem
+        contaNota(valorTotal)
         ulPedidosNow.removeChild(liFather);
     }
 
