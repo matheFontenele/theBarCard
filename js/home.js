@@ -2,12 +2,37 @@ const container = document.querySelector('#divAll')
 const ulPedidosNow = document.querySelector('#ul-pedidos');
 const priceTotalItens = document.querySelector('#total-itens');
 const containerConta = document.querySelector('#show-conta');
-const btnGetAllPedidos = document.querySelector('#getItensPedido')
 
 
 //Variaveis Globais
+const contaItensPedidos = []
+let itensPedido = []
 let valorItem;
 let valorTotal = 0;
+let valueString;
+
+//Função para adicionar pedidos a conta final
+const showContaFinal = () => {
+    console.log(contaItensPedidos)
+}
+
+
+//Função para adicionar valores ao array de pedidos
+const newItemPedido = (nome, valor) => {
+    itensPedido.push(
+        {
+            nome: nome,
+            valor: valor
+        }
+    )
+}
+
+//Função para alterar valor total de pedidos
+const newTotalValue = (total) =>{
+    changeString(total.toFixed(2))
+    priceTotalItens.innerText = valueString
+}
+
 
 //Função para somar e subtrair o valor total da conta
 const contaNota = (valor) =>{
@@ -25,11 +50,12 @@ const toNumber = (valor) =>{
     valorItem = Number(valor)
 }
 
-//Função para desabilitar botão de fazer pedidos caso esteja vazio
-const noEmpyCar = () =>{
-    if (priceTotalItens.innerText == '-0,00'){
-        priceTotalItens.innerText == '0,00'
-    }
+//Função para transformar number para string
+const changeString = (valor) =>{
+    valor = String(valor)
+    valor = valor.replace('.', ',')
+    valor = `R$ ${valor}` 
+    valueString = valor
 }
 
 
@@ -89,36 +115,30 @@ const creatCard = (item) => {
             valor.classList.add('btnChoice')
             itensList.appendChild(valor);
 
-            
-
         }
     }
 }
 
-//Função para adicionar itens do pedido
-const pedidosNow = (price) => {
+//Função para criar lista de pedidos
+const newCardPedidos = (nome, valor) => {
 
-    const newItemPedido = document.createElement('li');
+    const newItem = document.createElement('li');
+    ulPedidosNow.appendChild(newItem)
+
+    const newTitleItem = document.createElement('p')
+    newTitleItem.innerText = nome
+    newItem.appendChild(newTitleItem)
+
+    const newValorItem = document.createElement('p')
+    newValorItem.setAttribute('id', 'valorItem')
+    newValorItem.innerText = valor
+    newItem.appendChild(newValorItem)
+
     const removeItem = document.createElement('i');
-
     removeItem.classList.add('fa-solid');
     removeItem.classList.add('fa-trash');
     removeItem.setAttribute('id', 'btn-remove');
-
-    newItemPedido.innerHTML = (price)
-    const descItem = newItemPedido.querySelector('#descItem')
-    descItem.classList.add('hide')
-
-    newItemPedido.appendChild(removeItem)
-
-    ulPedidosNow.appendChild(newItemPedido)
-
-    const desableName = newItemPedido.querySelector('#nameItem')
-    desableName.classList.remove('btnChoice')
-    
-    const desablePrice = newItemPedido.querySelector('#valorText')
-    desablePrice.classList.remove('btnChoice')
-    
+    newItem.appendChild(removeItem)
 }
 
 
@@ -129,12 +149,7 @@ document.addEventListener('click', (e) => {
     const liFather = targetBtn.closest('li');
     const childresnDiv = papaiTarget.querySelector('ul')
     const getIdElemtent = targetBtn.getAttribute('id');
-
-    //Evento de mostrar e ocultar div de conta
-    if (getIdElemtent  == 'btn-conta' | getIdElemtent == 'Npedir-conta'){{
-        containerConta.classList.toggle('hide')
-    }}
-
+    
     //Evento de ocultar e mostrar sub itens de cardapio
     if(targetBtn.classList.contains('btnItens')){
         childresnDiv.classList.toggle('hide')
@@ -142,29 +157,52 @@ document.addEventListener('click', (e) => {
 
     //Evento para adicionar valor total e itens a lista de revisar pedidos
     if(targetBtn.classList.contains('btnChoice')){
-        let valorNumberItem = liFather.querySelector('#valorText').innerText
-        toNumber(valorNumberItem)
+        const nameChoice = liFather.querySelector('#nameItem').innerText;
+        const valorChoice = liFather.querySelector('#valorText').innerText;
+
+        newItemPedido(nameChoice, valorChoice)
+        newCardPedidos(nameChoice, valorChoice)
+
+        toNumber(valorChoice)
         valorTotal = valorTotal + valorItem
-        const newItem = liFather.innerHTML
-        contaNota(valorTotal)
-        pedidosNow(newItem)
-        
+        newTotalValue(valorTotal)
     }
 
-    //Evento para remover itens e alterar preço total na lista de pedidos
+    //Evento para remover itens do pedido e diminuir valor da conta
     if(getIdElemtent == 'btn-remove'){
-        let valorNumberItem = liFather.querySelector('#valorText').innerText
-        toNumber(valorNumberItem)
+        const valorChoice = liFather.querySelector('#valorItem').innerText
+        toNumber(valorChoice)
         valorTotal = valorTotal - valorItem
-        contaNota(valorTotal)
+        newTotalValue(valorTotal)
+
         ulPedidosNow.removeChild(liFather);
     }
 
-    //Evento para adicionar itens do pedido feito na conta total
-    if(getIdElemtent == 'getItensPedido'){
-        console.log('travei aqui')
+    //Evento de mostrar e ocultar div de conta
+    if (getIdElemtent  == 'btn-conta' | getIdElemtent == 'Npedir-conta'){{
+        containerConta.classList.toggle('hide')
+}}
+
+    //Evento para adicionar itens pedidos na conta final
+    if (getIdElemtent == 'getItensPedido'){
+        let arrayLength = itensPedido.length
+        let empyArray = []
+        
+        for( let i = 0; i < arrayLength; i++){
+           
+            contaItensPedidos.push(itensPedido[i])
+        }
+        showContaFinal()
+        itensPedido = empyArray
+        
+
+        for( let i = 0; i < arrayLength; i++){
+            const erasedList = ulPedidosNow.querySelector('li')
+            ulPedidosNow.removeChild(erasedList)
+            newTotalValue(0)
+        }
     }
+
 })
 
 getCard();
-noEmpyCar();

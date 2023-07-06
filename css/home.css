@@ -108,34 +108,18 @@
 }
 
 .pedidosNow ul{
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .pedidosNow ul li{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
     font-size: 1rem;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--border-color);
 }
 
-.pedidosNow ul li span{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.pedidosNow ul li span p:first-child{
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.pedidosNow ul li span p:last-child{
-    font-size: .7rem;
-}
 
 .pedidosNow #valorText{
     font-size: 1rem;
@@ -155,6 +139,10 @@
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 5px;
+}
+
+#btn-remove{
+    color: #cf2d2d;
 }
 
 /*CSS referente ao container de conta*/
