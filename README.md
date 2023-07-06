@@ -11,7 +11,6 @@
 
 <p align="center">
 - Armazenamento da ID da mesa
-- Interação dos botões realizar pedido, pedir conta
 - Fazer Div de Fechar conta com os valores totais
 - Tela de Loanding enquanto o JSON carrega
 </p> 
